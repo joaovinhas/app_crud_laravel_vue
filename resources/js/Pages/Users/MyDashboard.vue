@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -20,13 +20,6 @@ import { Head, Link } from '@inertiajs/vue3';
                 <div
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
                 >
-                    
-                    <div class="p-6">
-                        <Link :href="route('my_posts')" type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">
-                          My Posts
-                        </Link>
-
-                    </div>
                     <div class="p-6 text-gray-900">
                         You're logged in!
                     </div>

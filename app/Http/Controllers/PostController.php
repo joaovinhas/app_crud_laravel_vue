@@ -13,9 +13,10 @@ class PostController extends Controller
 
     public function my_posts(){
 
-        $posts = Posts::where('id_user', '=', Auth::id())->get();
+        #$posts = Posts::where('id_user', '=', Auth::id())->get();
 
-        return Inertia::render('Post/MyPosts', ['posts' => $posts, 'user' => Auth::user() ]);
+        #return Inertia::render('Post/MyPosts', ['posts' => $posts, 'user' => Auth::user() ]);
+        return Inertia::render('Posts/MyPosts', ['user' => Auth::user() ]);
 
     }
 
