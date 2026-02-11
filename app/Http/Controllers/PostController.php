@@ -13,10 +13,10 @@ class PostController extends Controller
 
     public function my_posts(){
 
-        #$posts = Posts::where('id_user', '=', Auth::id())->get();
+        $posts = Posts::where('id_user', '=', Auth::id())->get();
 
-        #return Inertia::render('Post/MyPosts', ['posts' => $posts, 'user' => Auth::user() ]);
-        return Inertia::render('Posts/MyPosts', ['user' => Auth::user() ]);
+        return Inertia::render('Posts/MyPosts', ['posts' => $posts, 'user' => Auth::user() ]);
+        #return Inertia::render('Posts/MyPosts', ['user' => Auth::user() ]);
 
     }
 
@@ -27,11 +27,11 @@ class PostController extends Controller
 
     public function store(Request $request){
 
-        // Validação dos dados
         $validated = $request->validate([
+            'thumbnail' => 'required|string|min:5|max:255',
             'title' => 'required|string|min:3|max:50',
             'status' => 'required|string',
-            'text' => 'required|text|min:3',
+            'content' => 'required|string|min:3|max:5000',
             'description' => 'nullable|string|max:255',
         ]);
 
